@@ -1,0 +1,14 @@
+[Unit]
+Description=GO Simple Tunnel
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/snap/bin/gost \
+    -L "udp://:1114/185.207.133.217:1114?keepAlive=true&ttl=5s&readBufferSize=4096" \
+    -L "tcp://:1114/185.207.133.217:1114?keepAlive=true&ttl=5s&readBufferSize=4096"
+
+
+[Install]
+WantedBy=multi-user.target
