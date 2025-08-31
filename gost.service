@@ -5,20 +5,21 @@ Wants=network.target
 
 [Service]
 Type=simple
-ExecStart=/snap/bin/gost \
-    -L "udp://:1322/87.120.107.124:1322?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "tcp://:1322/87.120.107.124:1322?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "udp://:1114/185.207.133.217:1114?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "tcp://:1114/185.207.133.217:1114?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "udp://:446/185.207.133.217:446?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "tcp://:446/185.207.133.217:446?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "udp://:1121/62.212.79.123:1121?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "tcp://:1121/62.212.79.123:1121?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "udp://:444/62.212.79.123:444?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "tcp://:444/62.212.79.123:444?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "udp://:1887/212.192.253.138:1887?keepAlive=true&ttl=5s&readBufferSize=4096" \
-    -L "tcp://:1887/212.192.253.138:1887?keepAlive=true&ttl=5s&readBufferSize=4096"
+ExecStart=/usr/local/bin/gost \
+    -L=tcp://:1322/87.120.107.124:1322 \
+    -L=udp://:1322/87.120.107.124:1322 \
+    -L=tcp://:1114/185.207.133.217:1114 \
+    -L=udp://:1114/185.207.133.217:1114 \
+    -L=tcp://:446/185.207.133.217:446 \
+    -L=udp://:446/185.207.133.217:446 \
+    -L=tcp://:1121/62.212.79.123:1121 \
+    -L=udp://:1121/62.212.79.123:1121 \
+    -L=tcp://:444/62.212.79.123:444 \
+    -L=udp://:444/62.212.79.123:444 \
+    -L=tcp://:1887/212.192.253.138:1887 \
+    -L=udp://:1887/212.192.253.138:1887
 
 [Install]
 
 WantedBy=multi-user.target
+
