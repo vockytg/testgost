@@ -6,7 +6,7 @@ Wants=network.target
 [Service]
 Type=simple
 ExecStart=/usr/local/bin/gost \
-    -L=tcp://:1322/87.120.107.124:1322 \
+    -L=tcp://:1322/64.188.73.32:1322 \
     -L=udp://:1322/64.188.73.32:1322 \
     -L=tcp://:1114/185.207.133.217:1114 \
     -L=udp://:1114/185.207.133.217:1114 \
@@ -22,5 +22,6 @@ ExecStart=/usr/local/bin/gost \
 [Install]
 
 WantedBy=multi-user.target
+
 
 
